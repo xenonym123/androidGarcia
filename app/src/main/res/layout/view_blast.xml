@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The stage keeps the same shape (800 : 748) on every phone.
+    size = 0.55  -> the stage takes 55% of the screen width
+    zoom = 1.45  -> the whole stage is scaled by 1.45 (scaleX / scaleY)
+    The left 421/800 holds the character; the ball layer covers the whole stage,
+    so the ball always lines up with his hand.
+    Two buttons at the bottom start and stop the animation.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:clipChildren="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blastStage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:scaleX="1.45"
+        android:scaleY="1.45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,800:748"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.55">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/warriorEdge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.52625" />
+
+        <!-- Character (original PNGs, background kept) -->
+        <ImageView
+            android:id="@+id/warriorFrame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="Character"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/warriorEdge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Rasengan layer (transparent), on top of the character -->
+        <ImageView
+            android:id="@+id/windFrame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="Rasengan"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Start and Stop buttons, side by side at the bottom -->
+    <Button
+        android:id="@+id/blastStartBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/start_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/blastStopBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/blastStopBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/stop_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/blastStartBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

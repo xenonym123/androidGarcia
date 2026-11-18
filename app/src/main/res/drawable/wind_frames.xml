@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FRAME ANIMATION for the Rasengan growing in the hand (same timing as the character).
+     Odd frames last 100 ms, in-between frames 40 ms.
+     oneshot=true: plays once and stays on the last frame. -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/wind_1" android:duration="100" />
+    <item android:drawable="@drawable/wind_2" android:duration="40" />
+    <item android:drawable="@drawable/wind_3" android:duration="100" />
+    <item android:drawable="@drawable/wind_4" android:duration="40" />
+    <item android:drawable="@drawable/wind_5" android:duration="100" />
+    <item android:drawable="@drawable/wind_6" android:duration="40" />
+    <item android:drawable="@drawable/wind_7" android:duration="100" />
+    <item android:drawable="@drawable/wind_8" android:duration="40" />
+    <item android:drawable="@drawable/wind_9" android:duration="100" />
+</animation-list>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    TWEEN ANIMATION: throws the Rasengan (700 ms).
+    Two animations play together inside one <set>:
+      1. translate - slides the ball to the right (100% = one full width of the ball layer)
+      2. alpha     - fades it out during the last 300 ms of the flight
+    The linear interpolator keeps the speed steady, so the ball leaves the hand at once.
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:shareInterpolator="false">
+
+    <translate
+        android:duration="700"
+        android:fromXDelta="0%"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toXDelta="100%" />
+
+    <alpha
+        android:duration="300"
+        android:fromAlpha="1.0"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:startOffset="400"
+        android:toAlpha="0.0" />
+</set>

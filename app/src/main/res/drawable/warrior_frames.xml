@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FRAME ANIMATION for the character: 5 original PNGs plus 4 short in-between frames.
+     Odd frames last 100 ms, in-between frames 40 ms.
+     oneshot=true: plays once and stays on the last frame. -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/warrior_1" android:duration="100" />
+    <item android:drawable="@drawable/warrior_2" android:duration="40" />
+    <item android:drawable="@drawable/warrior_3" android:duration="100" />
+    <item android:drawable="@drawable/warrior_4" android:duration="40" />
+    <item android:drawable="@drawable/warrior_5" android:duration="100" />
+    <item android:drawable="@drawable/warrior_6" android:duration="40" />
+    <item android:drawable="@drawable/warrior_7" android:duration="100" />
+    <item android:drawable="@drawable/warrior_8" android:duration="40" />
+    <item android:drawable="@drawable/warrior_9" android:duration="100" />
+</animation-list>
