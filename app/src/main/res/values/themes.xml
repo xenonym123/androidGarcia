@@ -1,3 +1,5 @@
 <resources>
-    <style name="Theme.Garcia" parent="Theme.AppCompat.NoActionBar" />
+    <style name="Theme.Garcia" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
 </resources>
